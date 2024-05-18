@@ -6,5 +6,9 @@
       "${UICop}"
     ],
     "al.ruleSetPath": "./.codeAnalysis/thisproject.ruleset.json",
-    "workbench.colorCustomizations": {}
+    "workbench.colorCustomizations": {},
+    "CRS.FileNamePattern": "<ObjectName>.<ObjectType>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectName>.<ObjectType>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectName>.<ObjectType>.al",
+    "al.rootNamespace": "AardvarkLabs"
   }

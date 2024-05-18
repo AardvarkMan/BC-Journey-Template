@@ -7,8 +7,10 @@
     ],
     "al.ruleSetPath": "./.codeAnalysis/thisproject.ruleset.json",
     "workbench.colorCustomizations": {},
-    "CRS.FileNamePattern": "<ObjectName>.<ObjectType>.al",
-    "CRS.FileNamePatternExtensions": "<ObjectName>.<ObjectType>.al",
-    "CRS.FileNamePatternPageCustomizations": "<ObjectName>.<ObjectType>.al",
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.ObjectNamePrefix": "ARD_",
     "al.rootNamespace": "AardvarkLabs"
   }

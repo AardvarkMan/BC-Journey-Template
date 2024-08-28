@@ -1,8 +1,8 @@
 {
-  "id": "776d940f-fc7f-4a22-8901-3c34407df048",
-  "name": "Aardvark Labs Basic Customizations",
+  "id": "9c6f398d-a733-42a8-b8e5-5ec518716ba0",
+  "name": "Aardvark Labs Advent of Code 2024",
   "publisher": "Aardvark Labs",
-  "brief": "Aardvark Labs Customizations.",
+  "brief": "Aardvark Labs Advent of Code 2024.",
   "description": "Customizations provided by Aardvark Labs",
   "version": "20.0.0.0",
   "privacyStatement": "http://aardvarklabs.blog",
@@ -15,8 +15,8 @@
   "features": [ "TranslationFile", "GenerateCaptions" ],
   "dependencies": [],
   "screenshots": [],
-  "platform": "24.0.0.0",
-  "application": "24.0.0.0",
+  "platform": "20.0.0.0",
+  "application": "20.0.0.0",
   "resourceExposurePolicy": {
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
@@ -24,7 +24,7 @@
   },
   "target": "Cloud",
   "idRanges": [
-    {"from": 50000, "to": 59999}
+    {"from": 82024, "to": 84024}
   ],
   "runtime":"13.0"
 }

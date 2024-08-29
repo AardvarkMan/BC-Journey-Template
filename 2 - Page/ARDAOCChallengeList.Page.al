@@ -19,6 +19,8 @@ page 82025 ARD_AOCChallengeList
                 field(ARD_Day; Rec.ARD_Day)
                 {
                 }
+                field(ARD_Challenge1Complete; Rec.ARD_Challenge1Complete){}
+                field(ARD_Challange2Complete; Rec.ARD_Challange2Complete){}
             }
         }
     }

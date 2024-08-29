@@ -9,7 +9,7 @@
       "tenant": "default",
       "serverInstance": "BC",
       "authentication": "UserPassword",
-      "startupObjectId": 22,
+      "startupObjectId": 82025,
       "breakOnError": false,
       "breakOnRecordWrite": false,
       "launchBrowser": true,

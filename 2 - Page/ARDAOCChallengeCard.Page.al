@@ -5,6 +5,7 @@ page 82024 ARD_AOCChallengeCard
     PageType = Card;
     SourceTable = ARD_AOCChallenge;
     UsageCategory = Documents;
+    DataCaptionExpression = DataCaptionText;
 
     layout
     {
@@ -16,6 +17,7 @@ page 82024 ARD_AOCChallengeCard
 
                 field("ARD_No."; Rec."ARD_No.")
                 {
+                    Visible = false;
                 }
                 field(ARD_Day; Rec.ARD_Day)
                 {
@@ -94,6 +96,9 @@ page 82024 ARD_AOCChallengeCard
                 field(ARD_Result1; Rec.ARD_Result1)
                 {
                 }
+                field(ARD_Challenge1Complete; Rec.ARD_Challenge1Complete)
+                {
+                }
             }
             group(Challenge2)
             {
@@ -121,6 +126,9 @@ page 82024 ARD_AOCChallengeCard
                 field(ARD_Result2; Rec.ARD_Result2)
                 {
                 }
+                field(ARD_Challange2Complete; Rec.ARD_Challange2Complete)
+                {
+                }
             }
         }
         
@@ -139,7 +147,7 @@ page 82024 ARD_AOCChallengeCard
                 var
                     AOCCalculator: Codeunit ARD_ResultsCalculatorRouter;
                 begin
-                    AOCCalculator.CalculateResult1(Rec, RunSampleData);
+                    Rec.ARD_Result1 := AOCCalculator.CalculateResult1(Rec, RunSampleData);
                 end;
             }
             action(CalculateResult2)
@@ -151,7 +159,7 @@ page 82024 ARD_AOCChallengeCard
                 var
                     AOCCalculator: Codeunit ARD_ResultsCalculatorRouter;
                 begin
-                    AOCCalculator.CalculateResult2(Rec, RunSampleData);
+                    Rec.ARD_Result2 := AOCCalculator.CalculateResult2(Rec, RunSampleData);
                 end;
             }
         }
@@ -164,79 +172,17 @@ page 82024 ARD_AOCChallengeCard
         ChallengeData: Text;
         RunSampleData: Boolean;
 
+        DataCaptionText: Text;
+
     trigger OnAfterGetCurrRecord()
     begin
-        Challenge1Body := RetrieveChallenge1Text();
-        Challenge2Body := RetrieveChallenge2Text();
-        ChallengeExample := RetrieveChallengeExample();
-        ChallengeData := RetrieveChallengeData();
+        Challenge1Body := Rec.RetrieveChallenge1Text();
+        Challenge2Body := Rec.RetrieveChallenge2Text();
+        ChallengeExample := Rec.RetrieveChallengeExample();
+        ChallengeData := Rec.RetrieveChallengeData();
+
+        DataCaptionText := 'Day ' + System.Format(Rec.ARD_Day);
     end;
 
-    procedure RetrieveChallenge1Text(): Text
-    var
-        TempBlob: codeunit "Temp Blob";
-        VarOutStream: OutStream;
-        VarInStream: InStream;
-        ChallengeText: Text;
-    begin
-        ChallengeText := '';
-        TempBlob.CreateOutStream(VarOutStream);
-        TempBlob.CreateInStream(VarInStream);
-
-        if Rec.ARD_Challenge1Text.ExportStream(VarOutStream) then
-            VarInStream.Read(ChallengeText);
-
-        exit(ChallengeText);
-    end;
-
-    procedure RetrieveChallenge2Text(): Text
-    var
-        TempBlob: codeunit "Temp Blob";
-        VarOutStream: OutStream;
-        VarInStream: InStream;
-        ChallengeText: Text;
-    begin
-        ChallengeText := '';
-        TempBlob.CreateOutStream(VarOutStream);
-        TempBlob.CreateInStream(VarInStream);
-
-        if Rec.ARD_Challenge2Text.ExportStream(VarOutStream) then
-            VarInStream.Read(ChallengeText);
-
-        exit(ChallengeText);
-    end;
-
-    procedure RetrieveChallengeExample(): Text
-    var
-        TempBlob: codeunit "Temp Blob";
-        VarOutStream: OutStream;
-        VarInStream: InStream;
-        ChallengeText: Text;
-    begin
-        ChallengeText := '';
-        TempBlob.CreateOutStream(VarOutStream);
-        TempBlob.CreateInStream(VarInStream);
-
-        if Rec.ARD_SimpleData.ExportStream(VarOutStream) then
-            VarInStream.Read(ChallengeText);
-
-        exit(ChallengeText);
-    end;
-
-    procedure RetrieveChallengeData(): Text
-    var
-        TempBlob: codeunit "Temp Blob";
-        VarOutStream: OutStream;
-        VarInStream: InStream;
-        ChallengeText: Text;
-    begin
-        ChallengeText := '';
-        TempBlob.CreateOutStream(VarOutStream);
-        TempBlob.CreateInStream(VarInStream);
-
-        if Rec.ARD_ChallengeData.ExportStream(VarOutStream) then
-            VarInStream.Read(ChallengeText);
-
-        exit(ChallengeText);
-    end;
+    
 }

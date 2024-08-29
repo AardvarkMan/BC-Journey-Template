@@ -1,6 +1,6 @@
 table 82024 ARD_AOCChallenge
 {
-    Caption = '_AOCChallenge';
+    Caption = 'AOC Challenge';
     DataClassification = CustomerContent;
     
     fields
@@ -46,6 +46,16 @@ table 82024 ARD_AOCChallenge
             Caption = 'Challenge Data';
             ToolTip = 'Challenge data set';
         }
+        field(9; ARD_Challenge1Complete; Boolean)
+        {
+            Caption = 'Challenge 1 Complete';
+            ToolTip = 'Challenge 1 Completed';
+        }
+        field(10; ARD_Challange2Complete; Boolean)
+        {
+            Caption = 'Challenge 2 Complete';
+            ToolTip = 'Challenge 2 Completed';
+        }
     }
     keys
     {
@@ -59,4 +69,72 @@ table 82024 ARD_AOCChallenge
         fieldgroup(brick; "ARD_No.", ARD_Day){}
         fieldgroup(dropdown; "ARD_No.", ARD_Day){}
     }
+
+    procedure RetrieveChallenge1Text(): Text
+    var
+        TempBlob: codeunit "Temp Blob";
+        VarOutStream: OutStream;
+        VarInStream: InStream;
+        ChallengeText: Text;
+    begin
+        ChallengeText := '';
+        TempBlob.CreateOutStream(VarOutStream);
+        TempBlob.CreateInStream(VarInStream);
+
+        if Rec.ARD_Challenge1Text.ExportStream(VarOutStream) then
+            VarInStream.Read(ChallengeText);
+
+        exit(ChallengeText);
+    end;
+
+    procedure RetrieveChallenge2Text(): Text
+    var
+        TempBlob: codeunit "Temp Blob";
+        VarOutStream: OutStream;
+        VarInStream: InStream;
+        ChallengeText: Text;
+    begin
+        ChallengeText := '';
+        TempBlob.CreateOutStream(VarOutStream);
+        TempBlob.CreateInStream(VarInStream);
+
+        if Rec.ARD_Challenge2Text.ExportStream(VarOutStream) then
+            VarInStream.Read(ChallengeText);
+
+        exit(ChallengeText);
+    end;
+
+    procedure RetrieveChallengeExample(): Text
+    var
+        TempBlob: codeunit "Temp Blob";
+        VarOutStream: OutStream;
+        VarInStream: InStream;
+        ChallengeText: Text;
+    begin
+        ChallengeText := '';
+        TempBlob.CreateOutStream(VarOutStream);
+        TempBlob.CreateInStream(VarInStream);
+
+        if Rec.ARD_SimpleData.ExportStream(VarOutStream) then
+            VarInStream.Read(ChallengeText);
+
+        exit(ChallengeText);
+    end;
+
+    procedure RetrieveChallengeData(): Text
+    var
+        TempBlob: codeunit "Temp Blob";
+        VarOutStream: OutStream;
+        VarInStream: InStream;
+        ChallengeText: Text;
+    begin
+        ChallengeText := '';
+        TempBlob.CreateOutStream(VarOutStream);
+        TempBlob.CreateInStream(VarInStream);
+
+        if Rec.ARD_ChallengeData.ExportStream(VarOutStream) then
+            VarInStream.Read(ChallengeText);
+
+        exit(ChallengeText);
+    end;
 }

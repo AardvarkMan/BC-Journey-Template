@@ -1,32 +1,32 @@
-codeunit 82024 ARD_ResultsCalculatorRouter
+codeunit 82025 ARD_ResultsCalculatorRouter
 {
-    TableNo = ARD_AOCChallenge;
-
-    trigger OnRun() begin
-    end;
-
-    Procedure CalculateResult1(Rec: record ARD_AOCChallenge; RunExample: Boolean)
-    begin
-
-    end;
-
-    Procedure CalculateResult2(Rec: record ARD_AOCChallenge; RunExample: Boolean)
-    begin
-
-    end;
-
-    //AOC 2023 Day 1
-    Procedure Calc2023011(Input:Text):Integer
+    Procedure CalculateResult1(Rec: record ARD_AOCChallenge; RunExample: Boolean): Integer
     var
-        Inputs: list of [Text];
-        Result: Integer;
-        NewLineCharacter: Char;
+        Day1: CodeUnit ARD_AOC202301;
+        Results: Integer;
+
     begin
-        Result := 0;
-        NewLineCharacter := 13;
+        Results := 0;
+        case Rec.ARD_Day of
+        1:
+            Results := Day1.CalculateResult1(Rec, RunExample);
+        
+        end;
+        exit(Results);
+    end;
 
-        Inputs := Input.Split(NewLineCharacter);
+    Procedure CalculateResult2(Rec: record ARD_AOCChallenge; RunExample: Boolean): Integer
+        var
+        Day1: CodeUnit ARD_AOC202301;
+        Results: Integer;
 
-        exit(Result);
+    begin
+        Results := 0;
+        case Rec.ARD_Day of
+        1:
+            Results := Day1.CalculateResult2(Rec, RunExample);
+        
+        end;
+        exit(Results);
     end;
 }

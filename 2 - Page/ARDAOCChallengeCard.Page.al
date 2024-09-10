@@ -27,7 +27,7 @@ page 82024 ARD_AOCChallengeCard
                     Caption = 'Example Data';
                     ToolTip = 'Example data set';
                     MultiLine = true;
-                    
+
                     trigger OnValidate()
                     var
                         TempBLOB: Codeunit "Temp Blob";
@@ -64,7 +64,7 @@ page 82024 ARD_AOCChallengeCard
                     end;
                 }
 
-                field(RunSampleData;RunSampleData)
+                field(RunSampleData; RunSampleData)
                 {
                     Caption = 'Run Example Data';
                     ToolTip = 'Run only the Example Data for a test run';
@@ -131,9 +131,9 @@ page 82024 ARD_AOCChallengeCard
                 }
             }
         }
-        
+
     }
-    
+
     actions
     {
         area(Processing)
@@ -145,7 +145,7 @@ page 82024 ARD_AOCChallengeCard
                 Image = Calculate;
                 trigger OnAction()
                 var
-                    AOCCalculator: Codeunit ARD_ResultsCalculatorRouter;
+                    AOCCalculator: Codeunit ARD_ResultsCalculator;
                 begin
                     Rec.ARD_Result1 := AOCCalculator.CalculateResult1(Rec, RunSampleData);
                 end;
@@ -157,7 +157,7 @@ page 82024 ARD_AOCChallengeCard
                 Image = Calculate;
                 trigger OnAction()
                 var
-                    AOCCalculator: Codeunit ARD_ResultsCalculatorRouter;
+                    AOCCalculator: Codeunit ARD_ResultsCalculator;
                 begin
                     Rec.ARD_Result2 := AOCCalculator.CalculateResult2(Rec, RunSampleData);
                 end;
@@ -184,5 +184,5 @@ page 82024 ARD_AOCChallengeCard
         DataCaptionText := 'Day ' + System.Format(Rec.ARD_Day);
     end;
 
-    
+
 }

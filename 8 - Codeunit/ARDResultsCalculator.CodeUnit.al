@@ -1,7 +1,7 @@
 codeunit 82025 ARD_ResultsCalculator
 {
     Procedure CalculateResult1(Rec: record ARD_AOCChallenge; RunExample: Boolean): Integer
-    var
+    var 
         AOCFactory: Codeunit ARD_AOCProcessorFactory;
         Results: Integer;
     begin

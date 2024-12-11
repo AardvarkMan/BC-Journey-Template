@@ -2,7 +2,6 @@ namespace AardvarkLabs;
 
 using System.Apps.AppSource;
 using System.Utilities;
-
 pageextension 50000 "ARD_AppSource Product List" extends "AppSource Product List"
 {
     layout

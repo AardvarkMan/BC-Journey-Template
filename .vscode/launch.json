@@ -9,11 +9,11 @@
       "tenant": "default",
       "serverInstance": "BC",
       "authentication": "UserPassword",
-      "startupObjectId": 82025,
+      "startupObjectId": 22,
       "breakOnError": false,
       "breakOnRecordWrite": false,
       "launchBrowser": true,
-      "schemaUpdateMode":"ForceSync"
+      "schemaUpdateMode": "Synchronize"
     }
   ]
 }

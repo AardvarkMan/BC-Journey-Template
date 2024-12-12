@@ -1,8 +1,8 @@
 {
-  "id": "ef715534-ac69-451f-a0e9-ae90fabe7104",
-  "name": "Aardvark Labs AppSource Customizations",
+  "id": "776d940f-fc7f-4a22-8901-3c34407df048",
+  "name": "Aardvark Labs Basic Customizations",
   "publisher": "Aardvark Labs",
-  "brief": "Aardvark Labs AppSource Customization.",
+  "brief": "Aardvark Labs Customizations.",
   "description": "Customizations provided by Aardvark Labs",
   "version": "20.0.0.0",
   "privacyStatement": "http://aardvarklabs.blog",
@@ -15,8 +15,8 @@
   "features": [ "TranslationFile", "GenerateCaptions" ],
   "dependencies": [],
   "screenshots": [],
-  "platform": "20.0.0.0",
-  "application": "20.0.0.0",
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
   "resourceExposurePolicy": {
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
@@ -26,6 +26,6 @@
   "idRanges": [
     {"from": 50000, "to": 59999}
   ],
-  "runtime":"14.0"
+  "runtime":"13.0"
 }
 

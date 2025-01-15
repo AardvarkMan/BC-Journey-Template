@@ -4,7 +4,7 @@
   "publisher": "Aardvark Labs",
   "brief": "Aardvark Labs Customizations.",
   "description": "Customizations provided by Aardvark Labs",
-  "version": "20.0.0.0",
+  "version": "1.25.0.0",
   "privacyStatement": "http://aardvarklabs.blog",
   "EULA": "http://aardvarklabs.blog",
   "help": "http://aardvarklabs.blog",
@@ -15,8 +15,9 @@
   "features": [ "TranslationFile", "GenerateCaptions" ],
   "dependencies": [],
   "screenshots": [],
-  "platform": "24.0.0.0",
-  "application": "24.0.0.0",
+  "resourceFolders": ["Resources"],
+  "platform": "25.0.0.0",
+  "application": "25.0.0.0",
   "resourceExposurePolicy": {
     "allowDebugging": true, 
     "allowDownloadingSource": true, 
@@ -26,6 +27,6 @@
   "idRanges": [
     {"from": 50000, "to": 59999}
   ],
-  "runtime":"13.0"
+  "runtime":"14.2"
 }
 

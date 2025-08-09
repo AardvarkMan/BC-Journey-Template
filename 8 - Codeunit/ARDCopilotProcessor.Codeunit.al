@@ -110,7 +110,9 @@ codeunit 50003 ARD_CopilotProcessor
     local procedure GetSystemPrompt() SystemPrompt: Text
     begin
         // Define the system prompt that instructs the AI on how to process the user's input
-        SystemPrompt := @'You are an AI assistant that helps people find Postal Codes in a response to a user prompt. Please return the Postal Codes in the format of a JSON Object with the following fields: Region Name, Postal Code. If no Postal Codes are found, return a default message indicating that no Postal Codes were found.';
+        SystemPrompt := @'You are an AI assistant that helps people find Postal Codes in a response to a user prompt.
+        Please return the Postal Codes in the format of a JSON Object named "PostalCodes" with an array containing objects of: Region Name, array of Postal Codes.
+        If no Postal Codes are found, return a default message indicating that no Postal Codes were found.';
     end;
 
     local procedure HandleError(var AoaiOperationResponse: Codeunit "AOAI Operation Response")

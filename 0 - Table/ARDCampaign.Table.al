@@ -2,6 +2,7 @@ table 50000 ARD_Campaign
 {
     Caption = 'AI Campaign';
     DataClassification = ToBeClassified;
+    DataCaptionFields = ARD_Name;
     
     fields
     {

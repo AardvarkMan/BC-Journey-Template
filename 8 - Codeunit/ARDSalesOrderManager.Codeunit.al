@@ -42,7 +42,7 @@ codeunit 50004 ARD_SalesOrderManager
                     LineNo := 10000;
 
                 AICampaignItem.SetRange("ARD_CampaignNo.", AICampaign."ARD_No.");
-                if AICampaignItem.FindSet() then
+                if AICampaignItem.FindSet() then begin
                     repeat
                         AICampaignItem.CalcFields("ARD_ItemName");
                         Description := StrSubstNo(DescriptionLbl, AICampaignItem.ARD_ItemName);
@@ -59,8 +59,13 @@ codeunit 50004 ARD_SalesOrderManager
 
                         LineNo += 10000;
                     until AICampaignItem.Next() = 0;
-                AICampaign.ARD_CurrentQuantity += 1;
-                AICampaign.Modify();
+                    
+                    AICampaign.ARD_CurrentQuantity += 1;
+                    AICampaign.Modify();
+
+                    SalesHeader.ARD_Campaign := AICampaign."ARD_No.";
+                    break; // Exit after processing the first valid campaign
+                end;
             until AICampaignPostalCode.Next() = 0;
     end;
 

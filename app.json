@@ -1,6 +1,6 @@
 {
-  "id": "776d940f-fc7f-4a22-8901-3c34407df048",
-  "name": "Aardvark Labs Basic Customizations",
+  "id": "95f78464-383c-4204-8398-4123a3d9f350",
+  "name": "Aardvark Labs AI Deiven Demo",
   "publisher": "Aardvark Labs",
   "brief": "Aardvark Labs Customizations.",
   "description": "Customizations provided by Aardvark Labs",
@@ -27,6 +27,5 @@
   "idRanges": [
     {"from": 50000, "to": 59999}
   ],
-  "runtime":"14.2"
+  "runtime":"15.1"
 }
-

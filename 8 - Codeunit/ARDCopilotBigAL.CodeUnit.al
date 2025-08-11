@@ -1,4 +1,4 @@
-codeunit 50001 ARD_CopilotJob
+codeunit 50001 ARD_Copilot_BigAL
 {
     trigger OnRun()
     begin
@@ -82,7 +82,7 @@ codeunit 50001 ARD_CopilotJob
         IsolatedStorageWrapper: Codeunit ARD_IsolatedStorageWrapper;
         Result: Text;
     begin
-        AzureOpenAi.SetCopilotCapability(Enum::"Copilot Capability"::"Customer Detail");        
+        AzureOpenAi.SetCopilotCapability(Enum::"Copilot Capability"::"Customer Detail");
         AzureOpenAI.SetManagedResourceAuthorization(Enum::"AOAI Model Type"::"Chat Completions", IsolatedStorageWrapper.GetDeployment(), IsolatedStorageWrapper.GetSecretKey(), AoaiDeployments.GetGPT41Latest());
 
         AoaiChatMessages.AddSystemMessage(ChatSystemPrompt);

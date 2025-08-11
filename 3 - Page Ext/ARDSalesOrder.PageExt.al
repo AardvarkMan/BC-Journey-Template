@@ -13,4 +13,5 @@ pageextension 50000 ARD_SalesOrder extends "Sales Order"
             }
         }
     }
+    
 }

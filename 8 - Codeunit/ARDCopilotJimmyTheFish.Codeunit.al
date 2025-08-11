@@ -1,4 +1,4 @@
-codeunit 50003 ARD_CopilotProcessor
+codeunit 50003 ARD_CopilotJimmyTheFish
 {
     trigger OnRun()
     begin
@@ -83,7 +83,7 @@ codeunit 50003 ARD_CopilotProcessor
         AOAIChatCompletionParams: CodeUnit "AOAI Chat Completion Params";
         Result: Text;
     begin
-        AzureOpenAi.SetCopilotCapability(Enum::"Copilot Capability"::"Customer Detail");        
+        AzureOpenAi.SetCopilotCapability(Enum::"Copilot Capability"::"Customer Detail");
         AzureOpenAI.SetManagedResourceAuthorization(Enum::"AOAI Model Type"::"Chat Completions", IsolatedStorageWrapper.GetDeployment(), IsolatedStorageWrapper.GetSecretKey(), AoaiDeployments.GetGPT41Latest());
 
         // Configure chat completion parameters

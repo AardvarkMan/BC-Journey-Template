@@ -106,7 +106,7 @@ page 50004 ARD_CampaignPrompt
 
     local procedure RunGeneration()
     var
-        GenerateRecommdation: Codeunit ARD_CopilotJob;
+        GenerateRecommdation: Codeunit ARD_Copilot_BigAL;
         Attempts: Integer;
     begin
         RequestResponse := '';
@@ -128,7 +128,7 @@ page 50004 ARD_CampaignPrompt
 
     local Procedure RunPostalCodeGeneration()
     var
-        GeneratePostalCodes: Codeunit ARD_CopilotProcessor;
+        GeneratePostalCodes: Codeunit ARD_CopilotJimmyTheFish;
         Attempts: Integer;
     begin
         PostalCodes := '';
